@@ -1,0 +1,95 @@
+<div id="contenedor" >
+    
+    <div id= "listaAbiertas">
+        <ul class="list" *ngFor="let item of Lista">
+            
+            <li class="list-item" *ngIf="item.estado == 'Abierta'" > <div class="card text-white bg-success mb-3" [routerLink]="['/../actualizarnota',item.id]" routerLinkActive="router-link-active" style="max-width: 18rem;" >
+                <div class="card-header" >{{item.estado}} </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.descripcion}}</p>
+               <!--    <a (click)="editar(item.id)" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+                <div><button type="button" class="btn-close" aria-label="Close" (click)="EliminarNota(item)"></button></div>
+            </div></li>
+        </ul>
+    </div>
+    
+    <div id= "listaEnproceso">
+        <ul class="list" *ngFor="let item of Lista">
+        
+            <li class="list-item" *ngIf="item.estado == 'En Proceso'"><div class="card text-white bg-primary mb-3" [routerLink]="['/../actualizarnota',item.id]" routerLinkActive="router-link-active" style="max-width: 18rem;">
+                <div class="card-header">{{item.estado}} </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.descripcion}}</p>
+                  
+                </div>
+                <div><button type="button" class="btn-close" aria-label="Close" (click)="EliminarNota(item)"></button></div>
+            </div></li>
+        </ul>
+    
+    </div>
+  
+    <div id= "listaCerradas">
+        <ul class="list" *ngFor="let item of Lista">
+            
+            <li class="list-item" *ngIf="item.estado == 'Cerrada'"><div class="card text-white bg-danger  mb-3"  style="max-width: 18rem;">
+                <div class="card-header">{{item.estado}} </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.descripcion}}</p>
+                  
+                </div>
+                <div><button type="button" class="btn-close" aria-label="Close" (click)="EliminarNota(item)"></button></div>
+            </div></li>
+        </ul>
+    </div>
+</div>
+    <!-- Este código hace un párrafo 
+    <tr *ngFor="let item of Lista">
+       
+        <td *ngIf="item.estado == 'Abierta'">
+
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{item.estado}} </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.descripcion}}</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+
+        </td>
+        <td *ngIf="item.estado == 'En Proceso'">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{item.estado}} </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.descripcion}}</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </td>
+        <td *ngIf="item.estado == 'Cerrada'"> 
+            <div class="card text-white bg-danger  mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{item.estado}} </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.descripcion}}</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </td>
+         
+        
+
+
+    </tr>
+    -->
+
+
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+<form [formGroup]="formulario" (ngSubmit)="Editar()" >
+    <ul>
+        <li>
+            <label for="nombre" style="padding-right: 10%" >Titulo</label>
+            <br>
+            <input formControlName="titulo" type="text" required >
+        </li>
+         <br>
+        <li>
+            <label >Estado</label><br>
+            <select formControlName="estado" required >
+                <option value="Abierta">Abierta</option>
+                <option value="En Proceso">En Proceso</option>
+                <option value="Cerrada">Cerrada</option>
+                
+             </select>
+        </li>
+        <br>
+        <li>
+            <label>Descripcion</label><br>
+            <input formControlName="descripcion" type="text" required >
+        </li>
+        <br>
+        <li>
+
+           
+            <button type="submit" id="enviar" > Actualizar Nota</button>
+           
+            
+        </li>
+    </ul>
+</form>
